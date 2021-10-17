@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Source: https://github.com/lstern/psilibrary/blob/master/doc/medline/bookdoc_160101.xsd-->
 <!--
-  
+
   	PubMed Books and Documents DTD
-  
-  This DTD was created in December 2009 to accommodate the loading of book and 
-  book chapter records to PubMed. 
-  
+
+  This DTD was created in December 2009 to accommodate the loading of book and
+  book chapter records to PubMed.
+
   Use the PUBLIC Identifier
-  
+
   "-//NLM-NCBI//DTD PubMed Books Documents, 12-16-2009 v.1//EN"
-  
+
   Delivered as "bookdoc.dtd"
-  
+
   1/29/2010 - changed "FirstPage" to "StartPage"
   2/3/2010 - added ArticleIdList to BookDocument and added bookaccession as value in %art.id.type.int;
-  
+
 -->
 <!--
   ENTITY % personal.name "( ForeName?, LastName, Initials, Suffix? )">
@@ -23,6 +23,8 @@
 -->
 <!-- ENTITY % normal.date "Year,Month,Day,(Hour,(Minute,Second?)?)?" -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:include schemaLocation="nlmmedlinecitationset_160101.xsd"/>
+  <xs:include schemaLocation="medline.xsd"/>
   <xs:attributeGroup name="booklinkatts">
     <xs:attribute name="book"/>
     <xs:attribute name="part"/>

@@ -2,24 +2,24 @@
 <!--Source: https://github.com/lstern/psilibrary/blob/master/doc/medline/nlmmedlinecitationset_160101.xsd-->
 <!--
   NLM MedlineCitationSet DTD
-  
+
    This is the DTD which NLM has written for Internal and External Use.
    January 1, 2016
-  
+
   **THIS IS THE FORTHCOMING DTD FOR 2016 NOT CURRENTLY IN USE.**
   *SEE http://www.nlm.nih.gov/databases/dtd/nlmmedlinecitationset_150101.dtd FOR THE NLM MedlineCitationSet DTD DATED JANUARY 1, 2015 CURRENTLY IN USE.*
-  
-   NOTE:  The use of "Medline" in a DTD or element name does not mean the record 
-   represents a citation from a Medline-selected journal.  When the NLM DTDs and 
-   XML elements were first created, MEDLINE records were the only data exported. 
-   Now NLM exports citations other than MEDLINE records using these tools. To 
+
+   NOTE:  The use of "Medline" in a DTD or element name does not mean the record
+   represents a citation from a Medline-selected journal.  When the NLM DTDs and
+   XML elements were first created, MEDLINE records were the only data exported.
+   Now NLM exports citations other than MEDLINE records using these tools. To
    minimize unnecessary disruption to users of the data and tools, NLM has
-   retained the original DTD and element names (e.g., NLMMedlineCitationSet, 
-   MedlineTA, MedlineJournalInfo).  
-  
-   NOTE:  StartPage and EndPage in Pagination element are not currently used; are reserved for future use.  
-  
-  
+   retained the original DTD and element names (e.g., NLMMedlineCitationSet,
+   MedlineTA, MedlineJournalInfo).
+
+   NOTE:  StartPage and EndPage in Pagination element are not currently used; are reserved for future use.
+
+
       * = 0 or more occurrences (optional element, repeatable)
       ? = 0 or 1 occurrences (optional element, at most 1)
       + = 1 or more occurrences (required element, repeatable)
@@ -29,16 +29,18 @@
 <!-- ================================================================= -->
 <!--
   Revision Notes Section
-  
+
     The following changes were made:
-  
-  a. Changed nlmmedlinecitationset_150101.dtd to nlmmedlinecitationset_160101.dtd. 
-  b. Added a valid value of "QCIM" for the Source attribute of the OtherID element. A value of QCIM indicates that the identifier came from the Quarterly Cumulative Index Medicus. 
-  
+
+  a. Changed nlmmedlinecitationset_150101.dtd to nlmmedlinecitationset_160101.dtd.
+  b. Added a valid value of "QCIM" for the Source attribute of the OtherID element. A value of QCIM indicates that the identifier came from the Quarterly Cumulative Index Medicus.
+
   See http://www.nlm.nih.gov/databases/dtd/history_dtd_nlmmedline.html for historic Revision Notes for previous versions of NLMMedlineCitationSet DTD.
 -->
 <!-- ====================================================================== -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:include schemaLocation="bookdoc_160101.xsd"/>
+  <xs:include schemaLocation="medline.xsd"/>
   <xs:element name="format" abstract="true" type="text"/>
   <xs:complexType name="text" mixed="true">
     <xs:sequence>
