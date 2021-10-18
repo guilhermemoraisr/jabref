@@ -148,7 +148,16 @@ class StringUtilTest {
 
     @Test
     void testGetPart() {
-        // Should be added
+        assertEquals("rinha",StringUtil.getPart("abobrinha",3, false));
+        assertEquals("rinha",StringUtil.getPart("abob rinha",3, false));
+        assertEquals("a",StringUtil.getPart("abobrinha",7, false));
+        assertEquals("",StringUtil.getPart("abobrinha",15, false));
+        assertEquals("",StringUtil.getPart("",3, false));
+        assertEquals("",StringUtil.getPart("}",3, true));
+        assertEquals("{rinha}",StringUtil.getPart("abob{rinha}",3, true));
+        assertEquals("{rinha}",StringUtil.getPart("abob{rinha}",3, false));
+        assertEquals("",StringUtil.getPart("{",3, false));
+        assertEquals("a",StringUtil.getPart("{a",0, false));
     }
 
     @Test
